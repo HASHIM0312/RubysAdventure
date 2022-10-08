@@ -48,14 +48,12 @@ public class RubyController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rb.position;
-        position.x += speed * horizontal * Time.deltaTime;
-        position.y += speed * vertical * Time.deltaTime;
+        position.x += speed * Time.deltaTime * horizontal;
+        position.y += speed * Time.deltaTime * vertical;
 
-        rb.position = position;
-        //position.y += speed * vertical * Time.deltaTime;
+        rb.MovePosition(position);
 
-
-        //rb.MovePosition(position);
+        
     }
 
     public void ChangeHealth(int amount)
